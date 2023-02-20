@@ -33,7 +33,7 @@ public class ClothController {
     public List<Cloth> get(@RequestHeader("User") String email) {
         User user = userRepository.findByEmail(email);
 
-        return clothRepository.findAll();
+        return clothRepository.findAllByUser(user);
     }
 
     @PostMapping("create")
